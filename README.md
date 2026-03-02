@@ -271,6 +271,56 @@ See **§9 📌 Open Problems and Research Gaps** below for the curated list of u
 
 *Last updated: 2025-03-02*
 
+#### By taxonomy
+
+```mermaid
+pie showData
+    title Papers by taxonomy (total 25)
+    "3.1 Energy Modeling" : 1
+    "3.2 Device-Level" : 6
+    "3.3 Edge AI" : 5
+    "3.4 Communication" : 2
+    "3.5 Cloud/Green AI" : 5
+    "3.6 Cross-Layer" : 4
+    "3.7 Benchmarks" : 2
+```
+
+#### By layer
+
+```mermaid
+pie showData
+    title Papers by layer
+    "device" : 8
+    "communication" : 2
+    "edge" : 5
+    "cloud" : 5
+    "cross-layer" : 4
+```
+
+#### By year (trend)
+
+```mermaid
+xychart-beta
+    title "Papers by year"
+    x-axis [2019, 2020, 2022, 2023, 2024, 2025, 2026]
+    y-axis "Count" 0 --> 12
+    line [1, 2, 6, 1, 3, 10, 1]
+```
+
+#### By energy metric
+
+```mermaid
+barChart
+    title "Papers by energy metric"
+    x-axis ["Energy", "Carbon", "Power", "Latency", "Throughput"]
+    y-axis "Count" 0 --> 12
+    bar [10, 5, 2, 3, 2]
+```
+
+---
+
+**Data tables (for reference)**
+
 | By taxonomy | Count |
 |-------------|-------|
 | 3.1 Energy Modeling | 1 |
