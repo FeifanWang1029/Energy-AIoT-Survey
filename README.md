@@ -16,61 +16,37 @@ AIoT combines **sensing**, **communication**, **edge intelligence**, and **cloud
 - How can **cross-layer optimization** reduce total system energy while meeting latency and accuracy goals?
 - How can AIoT align with **sustainable computing** (energy and carbon)?
 
-The repository organizes the literature by a layered view of the AIoT energy stack and a research taxonomy. Each taxonomy section corresponds to a folder for paper collection and will be filled during the literature review.
-
-**Goal:** This repo is designed so that visitors can **identify research gaps**—not only browse paper lists. You will find comparison tables, trend analysis, classification statistics, and a curated **open problems** list to quickly see what is under-studied or missing.
-
----
-
-## Repository Deliverables: Beyond Paper Lists
-<a name="repository-deliverables-beyond-paper-lists"></a>
-
-| Deliverable | Description | Location |
-|-------------|-------------|----------|
-| 📊 **Paper comparison tables** | Cross-paper tables by **energy metric**, **dataset**, and **layer** (device / comm / edge / cloud / cross-layer) for quick gap spotting | [`tables/`](tables/) — see [below](#paper-comparison-tables) |
-| 📈 **Trend analysis** | Publication trends over time, venue distribution, and emerging topics | [`trends/`](trends/) |
-| 🗂 **Classification statistics** | Counts by taxonomy, layer, metric, and year (e.g. “how many papers report EDP?”) | [`stats/`](stats/) and in README / survey |
-| 📌 **Open problems list** | Curated list of under-addressed questions and research gaps derived from the survey | [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) |
-
-Filling these as the literature review progresses makes it easy for others to **find research gaps** at a glance.
-
-### Survey stats (as of 2025-03-02)
-- **Total papers:** ~24 unique (25 entries across taxonomies)
-- **By layer:** device 8, communication 2, edge 5, cloud 5, cross-layer 4
-- **Details:** [stats/taxonomy_stats.md](stats/taxonomy_stats.md) · [tables/](tables/)
-
-**📊 Paper comparison tables** (in `tables/`) will include at least:
-- **By energy metric:** which papers report mJ/inference, EDP, carbon, throughput/W, etc.—so you can see which metrics are over/under-used.
-- **By dataset:** which papers use which benchmarks (e.g. MLPerf Tiny, custom IoT datasets)—to spot missing benchmarks or under-evaluated settings.
-- **By layer:** device vs communication vs edge vs cloud vs cross-layer—to see where the literature is concentrated and where gaps are.
-
-<a name="paper-comparison-tables"></a>
+**Goal:** This repo is designed so that visitors can **identify research gaps**—not only browse paper lists. All paper lists, comparison tables, statistics, trends, and **open problems** are in this README for easy indexing.
 
 ---
 
 ## Table of Content
 
-- [Scope](#scope)
-  - [Included](#included)
-  - [Excluded](#excluded)
-- [AIoT Energy Stack](#aiot-energy-stack)
-- [Research Taxonomy](#research-taxonomy)
-  - [3.1 Energy Modeling in AIoT](#41-energy-modeling-in-aiot)
-  - [3.2 Device-Level Energy Optimization](#42-device-level-energy-optimization)
-  - [3.3 Edge AI Energy Optimization](#43-edge-ai-energy-optimization)
-  - [3.4 Communication Energy Optimization](#44-communication-energy-optimization)
-  - [3.5 Cloud and Green AI for AIoT Pipelines](#45-cloud-and-green-ai-for-aiot-pipelines)
-  - [3.6 Cross-Layer Energy Optimization](#46-cross-layer-energy-optimization)
-  - [3.7 Benchmarks, Datasets, and Metrics](#47-benchmarks-datasets-and-metrics)
-  - [3.8 Open Challenges](#48-open-challenges)
-- [Repository Deliverables: Beyond Paper Lists](#repository-deliverables-beyond-paper-lists)
-- [Paper Comparison Tables](#paper-comparison-tables)
-- [Paper Collection Criteria and Repository Workflow](#paper-collection-criteria-and-repository-workflow)
-- [Keywords](#keywords)
+- [1. Scope](#1-scope)
+  - [Included](#included) · [Excluded](#excluded)
+- [2. AIoT Energy Stack](#2-aiot-energy-stack)
+- [3. Research Taxonomy & Paper Lists](#3-research-taxonomy--paper-lists)
+  - [3.1 Energy Modeling](#31-energy-modeling-in-aiot)
+  - [3.2 Device-Level Optimization](#32-device-level-energy-optimization)
+  - [3.3 Edge AI Energy](#33-edge-ai-energy-optimization)
+  - [3.4 Communication Energy](#34-communication-energy-optimization)
+  - [3.5 Cloud and Green AI](#35-cloud-and-green-ai-for-aiot-pipelines)
+  - [3.6 Cross-Layer Optimization](#36-cross-layer-energy-optimization)
+  - [3.7 Benchmarks and Metrics](#37-benchmarks-datasets-and-metrics)
+  - [3.8 Open Challenges](#38-open-challenges)
+- [4. 📊 Paper Comparison Tables](#4--paper-comparison-tables)
+  - [By energy metric](#by-energy-metric)
+  - [By dataset](#by-dataset)
+  - [By layer](#by-layer)
+- [5. 🗂 Classification Statistics](#5--classification-statistics)
+- [6. 📈 Publication Trends](#6--publication-trends)
+- [7. Paper Collection Criteria](#7-paper-collection-criteria)
+- [8. Keywords](#8-keywords)
+- [9. 📌 Open Problems and Research Gaps](#9--open-problems-and-research-gaps)
 
 ---
 
-<a name="scope"></a>
+<a name="1-scope"></a>
 ## 1. Scope
 
 <a name="included"></a>
@@ -93,7 +69,7 @@ Filling these as the literature review progresses makes it easy for others to **
 
 ---
 
-<a name="aiot-energy-stack"></a>
+<a name="2-aiot-energy-stack"></a>
 ## 2. AIoT Energy Stack (Layered View)
 
 Energy consumption in AIoT can be decomposed into the following layers; energy, latency, and accuracy are coupled across them.
@@ -108,207 +84,287 @@ Edge Layer            edge inference + orchestration
 Cloud / Data Center   training + coordination
 ```
 
-Literature in this repository is organized according to these layers and their interactions.
+---
+
+<a name="3-research-taxonomy--paper-lists"></a>
+## 3. Research Taxonomy & Paper Lists
+
+<a name="31-energy-modeling-in-aiot"></a>
+### 3.1 Energy Modeling in AIoT
+
+**Focus:** Power/energy modeling for inference and edge workloads; measurement methodologies (hardware counters, external meters, profiling); carbon footprint estimation; performance-per-watt evaluation.
+
+**Key questions:** How to quantify energy across device, edge, and cloud in a comparable way? How accurate are estimation-based vs measurement-based approaches? What metrics should become standard for AIoT energy evaluation?
+
+**Papers**
+
+| Title | Year | Venue | Layer(s) | Metric(s) | Dataset | Link |
+|-------|------|-------|----------|-----------|--------|------|
+| MLPerf Power: Benchmarking the Energy Efficiency of ML Systems from Microwatts to Megawatts | 2024 | arXiv / MLPerf | device, edge, cloud | energy, power | MLPerf suite | [arXiv](https://arxiv.org/abs/2410.12032) |
 
 ---
 
-<a name="research-taxonomy"></a>
-## 3. Research Taxonomy
+<a name="32-device-level-energy-optimization"></a>
+### 3.2 Device-Level Energy Optimization (TinyML + Sensing)
 
-The taxonomy below defines the survey structure. Each subsection corresponds to a folder (e.g. `1_Energy_Modeling/`) for paper lists and notes. **Paper lists will be populated during the literature review.**
+**Focus:** TinyML efficiency (quantization, pruning, distillation, NAS for MCUs); ultra-low-power and event-driven sensing; duty cycling and wake-up radios; energy harvesting integration.
 
----
+**Key questions:** How to enable useful intelligence under strict power budgets? How to trade off accuracy, energy, and memory on constrained devices?
 
-<a name="41-energy-modeling-in-aiot"></a>
-### 3.1 Energy Modeling in AIoT  
-**Folder:** `1_Energy_Modeling/`
+**Papers**
 
-**Focus**
-
-- Power and energy modeling for inference and edge workloads.
-- Measurement methodologies: hardware counters, external meters, profiling tools.
-- Carbon footprint estimation (carbon intensity, lifecycle).
-- Performance-per-watt and related evaluation frameworks.
-
-**Key questions**
-
-- How to quantify energy across device, edge, and cloud in a comparable way?
-- How accurate are estimation-based vs measurement-based approaches?
-- What metrics should become standard for AIoT energy evaluation?
+| Title | Year | Venue | Layer(s) | Metric(s) | Dataset | Link |
+|-------|------|-------|----------|-----------|--------|------|
+| PolyThrottle: Energy-efficient Neural Network Inference on Edge Devices | 2023 | arXiv | device, edge | energy (savings %) | Popular DNNs | [arXiv](https://arxiv.org/abs/2310.19991) |
+| tinyMAN: Lightweight Energy Manager using RL for Energy Harvesting Wearable IoT | 2022 | TinyML | device | μJ/inference, latency | Custom | [TinyML](https://cms.tinyml.org/wp-content/uploads/talks2022/2202.09297.pdf) |
+| MinUn: Accurate ML Inference on Microcontrollers | 2022 | arXiv | device | memory | ARM MCUs | [arXiv](https://arxiv.org/abs/2210.16556) |
+| TinyOps: ImageNet Scale Deep Learning on Microcontrollers | 2022 | CVPR Workshop | device | latency, accuracy | ImageNet | [CVF](https://openaccess.thecvf.com/content/CVPR2022W/ECV/papers/Sadiq_TinyOps_ImageNet_Scale_Deep_Learning_on_Microcontrollers_CVPRW_2022_paper.pdf) |
+| Ultralow-Power Smart IoT Device with Embedded TinyML for Asset Monitoring | 2022 | IEEE | device | power (mW), battery life | Custom | [IEEE](https://ieeexplore.ieee.org/document/9758676) |
+| Deploying TinyML for Energy-Efficient Object Detection in Low-Power Edge AI | 2025 | Scientific Reports | device | energy (J/inference), latency | Custom | [Nature](https://www.nature.com/articles/s41598-025-27818-9) |
 
 ---
 
-<a name="42-device-level-energy-optimization"></a>
-### 3.2 Device-Level Energy Optimization (TinyML + Sensing)  
-**Folder:** `2_Device_Level_Optimization/`
+<a name="33-edge-ai-energy-optimization"></a>
+### 3.3 Edge AI Energy Optimization
 
-**Focus**
+**Focus:** Energy-aware task offloading (device ↔ edge ↔ cloud); joint latency–energy optimization; edge scheduling and resource management; federated learning energy cost and optimization.
 
-- TinyML efficiency: quantization, pruning, distillation, NAS for MCUs and ultra-low-power devices.
-- Ultra-low-power and event-driven sensing.
-- Duty cycling and wake-up radios.
-- Energy harvesting integration and batteryless operation.
+**Key questions:** When is local inference more energy-efficient than offloading (total system energy)? How to meet latency and accuracy constraints with minimal energy?
 
-**Key questions**
+**Papers**
 
-- How to enable useful intelligence under strict power budgets?
-- How to trade off accuracy, energy, and memory on constrained devices?
-
----
-
-<a name="43-edge-ai-energy-optimization"></a>
-### 3.3 Edge AI Energy Optimization  
-**Folder:** `3_Edge_AI_Energy/`
-
-**Focus**
-
-- Energy-aware task offloading (device ↔ edge ↔ cloud).
-- Joint latency–energy optimization.
-- Edge scheduling and resource management.
-- Federated learning: energy cost and optimization.
-
-**Key questions**
-
-- When is local inference more energy-efficient than offloading (total system energy)?
-- How to meet latency and accuracy constraints with minimal energy?
+| Title | Year | Venue | Layer(s) | Metric(s) | Dataset | Link |
+|-------|------|-------|----------|-----------|--------|------|
+| EdgeSight: Enabling Modeless and Cost-Efficient Inference at the Edge | 2024 | arXiv | edge | power (3.34× reduction) | FPGA prototype | [arXiv](https://arxiv.org/abs/2405.19213) |
+| Infer-EDGE: Dynamic DNN Inference Optimization in Just-in-time Edge-AI | 2025 | arXiv | edge | energy, latency, accuracy | Video processing | [arXiv](https://arxiv.org/html/2501.18842) |
+| Energy-Aware Inference Offloading for DNN-Driven Applications in Mobile Edge Clouds | 2020 | IEEE/ACM | edge | energy, latency | 5G MEC | [CityU](https://www.cs.cityu.edu.hk/~weliang/papers/XZLRZXXW20.pdf) |
+| BEFL: Balancing Energy Consumption in Federated Learning for Mobile Edge IoT | 2024 | arXiv | edge | energy (28.2% reduction) | FL benchmarks | [ADS](https://ui.adsabs.harvard.edu/abs/2024arXiv241203950J/abstract) |
+| Energy-Efficient Edge Inference in Integrated Sensing, Communication, and Computation Networks | 2025 | arXiv | edge | energy (40% reduction) | Low-latency scenarios | [arXiv](https://arxiv.org/html/2503.00298) |
 
 ---
 
-<a name="44-communication-energy-optimization"></a>
-### 3.4 Communication Energy Optimization  
-**Folder:** `4_Communication_Energy/`
+<a name="34-communication-energy-optimization"></a>
+### 3.4 Communication Energy Optimization
 
-**Focus**
+**Focus:** Transmission power control and energy-efficient protocols; communication–computation trade-offs in AIoT; efficient data representation and compression to reduce transmission energy; 5G/6G energy efficiency.
 
-- Transmission power control and energy-efficient protocols.
-- Communication–computation trade-offs in AIoT.
-- Efficient data representation and compression to reduce transmission energy.
-- 5G/6G energy efficiency in the context of AIoT.
+**Key questions:** Is communication or computation the dominant energy cost in typical deployments? How to jointly optimize network and inference for energy?
 
-**Key questions**
+**Papers**
 
-- Is communication or computation the dominant energy cost in typical deployments?
-- How to jointly optimize network and inference for energy?
+| Title | Year | Venue | Layer(s) | Metric(s) | Dataset | Link |
+|-------|------|-------|----------|-----------|--------|------|
+| Energy-Aware Federated Learning for Secure Edge Computing in 5G-Enabled IoT | 2025 | JESIT | communication, edge | energy, communication cost | IoT FL | [Springer](https://jesit.springeropen.com/articles/10.1186/s43067-025-00203-2) |
+| Energy-Efficient Collaborative Task Computation Offloading in Cloud-Assisted Edge for IoT | 2019 | PMC | communication, edge | energy | IoT sensors | [PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC6427149/) |
 
 ---
 
-<a name="45-cloud-and-green-ai-for-aiot-pipelines"></a>
-### 3.5 Cloud and Green AI for AIoT Pipelines  
-**Folder:** `5_Cloud_Green_AI/`
+<a name="35-cloud-and-green-ai-for-aiot-pipelines"></a>
+### 3.5 Cloud and Green AI for AIoT Pipelines
 
-**Focus**
+**Focus:** Carbon-aware and renewable-aware scheduling; energy-efficient distributed training relevant to AIoT; sustainable data centers and AI carbon accounting; AIoT pipeline aspects (model updates, retraining frequency, lifecycle impact).
 
-- Carbon-aware and renewable-aware scheduling.
-- Energy-efficient distributed training relevant to AIoT.
-- Sustainable data centers and AI carbon accounting.
-- AIoT pipeline aspects: model updates, retraining frequency, lifecycle impact.
+**Key questions:** How to reduce the lifecycle carbon cost of AIoT intelligence? Can carbon-aware scheduling reduce emissions without degrading SLAs?
 
-**Key questions**
+**Papers**
 
-- How to reduce the lifecycle carbon cost of AIoT intelligence?
-- Can carbon-aware scheduling reduce emissions without degrading SLAs?
-
----
-
-<a name="46-cross-layer-energy-optimization"></a>
-### 3.6 Cross-Layer Energy Optimization (System-Level)  
-**Folder:** `6_Cross_Layer_Optimization/`
-
-**Focus**
-
-- End-to-end energy optimization across sensing, communication, edge, and cloud.
-- Cross-layer co-design (hardware–model–system).
-- Orchestration policies: energy-aware placement, adaptive inference.
-- Multi-objective optimization (energy, latency, accuracy, privacy).
-
-**Key questions**
-
-- How to coordinate all layers to minimize total system energy?
-- Where are the bottlenecks, and how to design scalable controllers?
+| Title | Year | Venue | Layer(s) | Metric(s) | Dataset | Link |
+|-------|------|-------|----------|-----------|--------|------|
+| CarbonGearRL: Precision-Elastic, Carbon-Aware Scheduling for Foundation-Model Training | 2025 | OpenReview (ICLR?) | cloud | CO₂-e (52% reduction) | LLaMA 13B/70B | [OpenReview](https://openreview.net/forum?id=WRSveTJRtG) |
+| EcoServe: Designing Carbon-Aware AI Inference Systems | 2025 | arXiv | cloud | carbon (47% reduction) | LLM inference | [arXiv](https://arxiv.org/abs/2502.05043) |
+| GREEN: Carbon-efficient Resource Scheduling for Machine Learning Clusters | 2025 | NSDI | cloud | carbon (41.2% reduction) | ML clusters | [USENIX](https://www.usenix.org/conference/nsdi25/presentation/xu-kaiqiang) |
+| Carbon- and Precedence-Aware Scheduling for Data Processing Clusters (PCAPS) | 2025 | SIGCOMM | cloud | carbon (32.9% reduction) | K8s cluster | [MIT](https://dspace.mit.edu/handle/1721.1/162640) |
+| CarbonFlex: Carbon-aware Provisioning and Scheduling for Cloud Clusters | 2025 | arXiv | cloud | carbon (~57% reduction) | Batch jobs | [arXiv](https://arxiv.org/html/2505.18357) |
 
 ---
 
-<a name="47-benchmarks-datasets-and-metrics"></a>
-### 3.7 Benchmarks, Datasets, and Metrics  
-**Folder:** `7_Benchmarks_and_Datasets/`
+<a name="36-cross-layer-energy-optimization"></a>
+### 3.6 Cross-Layer Energy Optimization (System-Level)
 
-**Focus**
+**Focus:** End-to-end energy optimization across sensing, communication, edge, and cloud; cross-layer co-design (hardware–model–system); orchestration policies (energy-aware placement, adaptive inference); multi-objective optimization (energy, latency, accuracy, privacy).
 
-- Benchmark suites for edge, TinyML, and AIoT energy.
-- Tools for measurement and profiling.
-- Standardized evaluation protocols and reporting.
+**Key questions:** How to coordinate all layers to minimize total system energy? Where are the bottlenecks, and how to design scalable controllers?
 
-**Common metrics**
+**Papers**
 
-- Energy per inference / per sample.
-- Energy–delay product (EDP) and energy–latency–accuracy trade-offs.
-- Throughput per watt.
-- Carbon intensity and CO₂-equivalent estimates.
-
----
-
-<a name="48-open-challenges"></a>
-### 3.8 Open Challenges  
-**Folder:** `8_Open_Challenges/`
-
-**Representative topics**
-
-- Lack of standardized benchmarks and reporting conventions for AIoT energy.
-- Trade-offs among energy, accuracy, latency, and privacy.
-- Security vs energy cost in real-world AIoT deployments.
-- Lifecycle carbon accounting (training, inference, updates).
-- Cross-layer coordination complexity at scale.
-- Reproducibility of real-world energy evaluation.
+| Title | Year | Venue | Layer(s) | Metric(s) | Dataset | Link |
+|-------|------|-------|----------|-----------|--------|------|
+| Energy-Efficient Edge Inference in Integrated Sensing, Communication, and Computation Networks | 2025 | arXiv | cross-layer | energy | ISCC | [arXiv](https://arxiv.org/html/2503.00298) |
+| MobiSplit: Mobility-Aware Inference Partitioning and Offloading for Efficient Edge Intelligence | 2026 | IEEE TMC | cross-layer | energy, latency | Mobile edge | [IEEE](https://www.computer.org/csdl/journal/tm/2026/03/11202426/2aMEEULKPMk) |
+| Dynamic Task Offloading and Resource Allocation for Energy-Harvesting End–Edge–Cloud Systems | 2020+ | arXiv | cross-layer | energy | EH devices | [arXiv](https://arxiv.org/pdf/2006.10978) |
+| EEDTO: Energy-Efficient Dynamic Task Offloading for Blockchain-Enabled IoT-Edge-Cloud | 2025 | TJU | cross-layer | energy | IoT-edge-cloud | [TJU](https://cam.tju.edu.cn/homepage/wuhuaming/PDF/EEDTO.pdf) |
 
 ---
 
-<a name="paper-collection-criteria-and-repository-workflow"></a>
-## 4. Paper Collection Criteria and Repository Workflow
+<a name="37-benchmarks-datasets-and-metrics"></a>
+### 3.7 Benchmarks, Datasets, and Metrics
 
-**Criteria for inclusion**
+**Focus:** Benchmark suites for edge, TinyML, and AIoT energy; tools for measurement and profiling; standardized evaluation protocols and reporting. Common metrics: energy per inference/sample, EDP, throughput per watt, carbon intensity.
 
-- Publication **2020–present** (exceptions for foundational work).
-- **Quantitative** energy evaluation (measurement or well-justified estimation).
-- Clear experimental settings (hardware, workload, dataset).
-- Relevance to system-level AIoT or edge AI (device/edge/network/cloud).
+**Papers**
 
-**Per-paper record** (feeds into comparison tables and stats)
-
-- Citation (BibTeX + link).
-- **Layer(s):** device / communication / edge / cloud / cross-layer.
-- **Energy metric(s)** used and how measured (e.g. mJ/inference, EDP, carbon).
-- **Dataset(s)** and hardware (for reproducibility and comparison).
-- Problem and method (brief bullets).
-- Key results (numbers and settings).
-- Limitations and **open gaps** (→ candidates for [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)).
-
-**Repository structure** (designed for research-gap discovery)
-
-```
-├── README.md                 # This file + high-level stats summary
-├── OPEN_PROBLEMS.md           # 📌 Curated open problems / research gaps
-├── tables/                    # 📊 Cross-paper comparison tables
-│   ├── by_energy_metric.md    # Papers grouped by metric (e.g. EDP, mJ/sample)
-│   ├── by_dataset.md         # Papers by dataset / benchmark
-│   └── by_layer.md            # Papers by layer (device / comm / edge / cloud / cross)
-├── trends/                    # 📈 Trend analysis
-│   └── publication_trends.md   # Year, venue, topic trends
-├── stats/                     # 🗂 Classification statistics
-│   └── taxonomy_stats.md      # Counts by taxonomy, layer, metric, year
-└── 1_Energy_Modeling/         # Per-taxonomy folders
-    ├── paper_list.md          # Paper list for this taxonomy
-    ├── notes/                 # Per-paper notes
-    └── tables/                # Section-specific summary tables
-└── 2_Device_Level_Optimization/
-    └── ...
-```
-
-- **Per-taxonomy folder:** `paper_list.md`, `notes/`, `tables/` (section-level summaries).
-- **Root-level:** `tables/` (cross-paper comparison), `trends/`, `stats/`, `OPEN_PROBLEMS.md` — so anyone can quickly **find research gaps** without digging into every folder.
+| Title | Year | Venue | Layer(s) | Metric(s) | Dataset | Link |
+|-------|------|-------|----------|-----------|--------|------|
+| MLPerf Power: Benchmarking the Energy Efficiency of ML Systems from Microwatts to Megawatts | 2024 | arXiv / MLCommons | device–cloud | energy, power | MLPerf suite | [arXiv](https://arxiv.org/abs/2410.12032) |
+| MLPerf Tiny (benchmark suite) | 2022+ | MLCommons | device | latency, energy | Keyword spotting, VWW, etc. | [MLCommons](https://mlcommons.org/working-groups/benchmarks/tiny/) |
 
 ---
 
-<a name="keywords"></a>
-## 5. Keywords
+<a name="38-open-challenges"></a>
+### 3.8 Open Challenges
+
+**Representative topics:** Lack of standardized benchmarks and reporting conventions for AIoT energy; trade-offs among energy, accuracy, latency, and privacy; security vs energy cost in real-world AIoT deployments; lifecycle carbon accounting (training, inference, updates); cross-layer coordination complexity at scale; reproducibility of real-world energy evaluation.
+
+See **§9 📌 Open Problems and Research Gaps** below for the curated list of under-addressed questions.
+
+---
+
+<a name="4--paper-comparison-tables"></a>
+## 4. 📊 Paper Comparison Tables
+
+*Purpose: See which metrics/datasets/layers are over- or under-studied; find gaps.*
+
+<a name="by-energy-metric"></a>
+### By energy metric
+
+| Metric | Papers |
+|--------|--------|
+| **mJ/μJ/J per inference** | [tinyMAN](https://cms.tinyml.org/wp-content/uploads/talks2022/2202.09297.pdf) (2022), [Deploying TinyML for Object Detection](https://www.nature.com/articles/s41598-025-27818-9) (2025) |
+| **Energy (generic: %, reduction)** | [PolyThrottle](https://arxiv.org/abs/2310.19991), [EdgeSight](https://arxiv.org/abs/2405.19213), [Infer-EDGE](https://arxiv.org/html/2501.18842), [Energy-Efficient Edge Inference ISCC](https://arxiv.org/html/2503.00298), [BEFL](https://ui.adsabs.harvard.edu/abs/2024arXiv241203950J/abstract), [Energy-Aware Inference Offloading](https://www.cs.cityu.edu.hk/~weliang/papers/XZLRZXXW20.pdf), [MobiSplit](https://www.computer.org/csdl/journal/tm/2026/03/11202426/2aMEEULKPMk), [EEDTO](https://cam.tju.edu.cn/homepage/wuhuaming/PDF/EEDTO.pdf) |
+| **Power (W, mW)** | [Ultralow-Power Smart IoT](https://ieeexplore.ieee.org/document/9758676), [EdgeSight](https://arxiv.org/abs/2405.19213) |
+| **Carbon / CO₂** | [CarbonGearRL](https://openreview.net/forum?id=WRSveTJRtG), [EcoServe](https://arxiv.org/abs/2502.05043), [GREEN](https://www.usenix.org/conference/nsdi25/presentation/xu-kaiqiang), [PCAPS](https://dspace.mit.edu/handle/1721.1/162640), [CarbonFlex](https://arxiv.org/html/2505.18357) |
+| **Latency (joint with energy)** | [MinUn](https://arxiv.org/abs/2210.16556), [TinyOps](https://openaccess.thecvf.com/content/CVPR2022W/ECV/papers/Sadiq_TinyOps_ImageNet_Scale_Deep_Learning_on_Microcontrollers_CVPRW_2022_paper.pdf), [Infer-EDGE](https://arxiv.org/html/2501.18842) |
+| **Throughput / benchmark** | [MLPerf Power](https://arxiv.org/abs/2410.12032), [MLPerf Tiny](https://mlcommons.org/working-groups/benchmarks/tiny/) |
+
+*Gap note: EDP (energy-delay product) is rarely reported.*
+
+<a name="by-dataset"></a>
+### By dataset
+
+| Dataset / benchmark | Papers |
+|---------------------|--------|
+| **MLPerf (Tiny, Power)** | [MLPerf Power](https://arxiv.org/abs/2410.12032), [MLPerf Tiny](https://mlcommons.org/working-groups/benchmarks/tiny/) |
+| **ImageNet** | [TinyOps](https://openaccess.thecvf.com/content/CVPR2022W/ECV/papers/Sadiq_TinyOps_ImageNet_Scale_Deep_Learning_on_Microcontrollers_CVPRW_2022_paper.pdf) |
+| **Custom / application-specific** | [tinyMAN](https://cms.tinyml.org/wp-content/uploads/talks2022/2202.09297.pdf), [Ultralow-Power Smart IoT](https://ieeexplore.ieee.org/document/9758676), [Deploying TinyML](https://www.nature.com/articles/s41598-025-27818-9), [BEFL](https://ui.adsabs.harvard.edu/abs/2024arXiv241203950J/abstract), [Collaborative Task Offloading](https://pmc.ncbi.nlm.nih.gov/articles/PMC6427149/), [Energy-Aware FL 5G IoT](https://jesit.springeropen.com/articles/10.1186/s43067-025-00203-2) |
+| **Foundation models / LLM** | [CarbonGearRL](https://openreview.net/forum?id=WRSveTJRtG) (LLaMA), [EcoServe](https://arxiv.org/abs/2502.05043) |
+| **Video / DNN** | [Infer-EDGE](https://arxiv.org/html/2501.18842), [EdgeSight](https://arxiv.org/abs/2405.19213) |
+
+*Gap note: Few papers share the same public dataset; reproducibility and comparison remain limited.*
+
+<a name="by-layer"></a>
+### By layer
+
+| Layer | Papers (representative) |
+|-------|-------------------------|
+| **Device** | PolyThrottle, tinyMAN, MinUn, TinyOps, Ultralow-Power Smart IoT, Deploying TinyML, MLPerf Power, MLPerf Tiny |
+| **Communication** | Energy-Aware FL 5G IoT, Energy-Efficient Collaborative Task Offloading |
+| **Edge** | EdgeSight, Infer-EDGE, Energy-Aware Inference Offloading, BEFL, Energy-Efficient Edge Inference ISCC |
+| **Cloud** | CarbonGearRL, EcoServe, GREEN, PCAPS, CarbonFlex |
+| **Cross-layer** | Energy-Efficient Edge Inference ISCC, MobiSplit, Dynamic Task Offloading End–Edge–Cloud, EEDTO |
+
+*Gap note: Communication-only and device-only layers have fewer papers.*
+
+---
+
+<a name="5--classification-statistics"></a>
+## 5. 🗂 Classification Statistics
+
+*Last updated: 2025-03-02*
+
+| By taxonomy | Count |
+|-------------|-------|
+| 3.1 Energy Modeling | 1 |
+| 3.2 Device-Level | 6 |
+| 3.3 Edge AI | 5 |
+| 3.4 Communication | 2 |
+| 3.5 Cloud/Green AI | 5 |
+| 3.6 Cross-Layer | 4 |
+| 3.7 Benchmarks | 2 |
+| **Total (entries)** | **25** |
+
+*(Unique papers ≈ 24.)*
+
+| By layer | Count |
+|----------|-------|
+| device | 8 |
+| communication | 2 |
+| edge | 5 |
+| cloud | 5 |
+| cross-layer | 4 |
+
+| By energy metric | Count |
+|------------------|-------|
+| Energy (generic) | 10 |
+| Carbon / CO₂ | 5 |
+| Power | 2 |
+| Latency (joint) | 3 |
+| Throughput / benchmark | 2 |
+
+| By year | Count |
+|---------|-------|
+| 2025 | 10 |
+| 2024 | 3 |
+| 2023 | 1 |
+| 2022 | 6 |
+| 2020 | 2 |
+| 2019 | 1 |
+| 2026 | 1 (early access) |
+
+---
+
+<a name="6--publication-trends"></a>
+## 6. 📈 Publication Trends
+
+*Last updated: 2025-03-02*
+
+- **By year:** Most papers are from **2022–2025**, with a strong concentration in **2025** (carbon-aware scheduling/inference, edge/cross-layer energy). Earlier years (2019–2020) contribute offloading and MEC energy work.
+- **By venue:** arXiv dominates the current set (preprints); published venues include NSDI (GREEN), SIGCOMM (PCAPS), IEEE TMC (MobiSplit), OpenReview (CarbonGearRL), TinyML/CVPR/MLCommons for device-level and benchmarks.
+- **Emerging topics:** Carbon-aware scheduling and inference; edge and cross-layer energy (ISCC, MobiSplit, Infer-EDGE, EEDTO); TinyML and device-level energy (TinyMAN, TinyOps, MinUn, MLPerf Tiny/Power).
+
+---
+
+<a name="7-paper-collection-criteria"></a>
+## 7. Paper Collection Criteria
+
+**Inclusion:** Publication 2020–present (exceptions for foundational work); **quantitative** energy evaluation; clear experimental settings (hardware, workload, dataset); relevance to system-level AIoT or edge AI.
+
+**Per-paper record:** Citation (BibTeX + link); **Layer(s)** (device / communication / edge / cloud / cross-layer); **Energy metric(s)** and how measured; **Dataset(s)** and hardware; problem and method; key results; limitations and open gaps (→ candidates for **§9 Open Problems** below).
+
+When adding papers, update the relevant taxonomy section in **§3**, then refresh **§4 (tables)**, **§5 (stats)**, and **§6 (trends)** in this README. When you identify new research gaps, add them to **§9**.
+
+---
+
+<a name="8-keywords"></a>
+## 8. Keywords
 
 AIoT · Energy-aware computing · Green AI · Edge AI · TinyML · Cross-layer optimization · Sustainable computing · Carbon-aware systems
+
+---
+
+<a name="9--open-problems-and-research-gaps"></a>
+## 9. 📌 Open Problems and Research Gaps
+
+Under-addressed questions and research gaps derived from the survey. Use this list to quickly identify where new research is needed.
+
+**How to use**
+
+- Items are linked to the taxonomy (e.g. Energy Modeling, Device-Level, Edge AI) and/or layer (device / comm / edge / cloud / cross-layer).
+- **Gap** = few or no papers address this; **Open problem** = recognized but unsolved.
+
+**By taxonomy**
+
+| Taxonomy | Gaps / open problems |
+|----------|----------------------|
+| **Energy Modeling** | Lack of standard metrics; missing carbon accounting for edge. *(To be filled as review progresses.)* |
+| **Device-Level (TinyML + Sensing)** | *(To be filled)* |
+| **Edge AI Energy** | *(To be filled)* |
+| **Communication Energy** | *(To be filled)* |
+| **Cloud and Green AI** | *(To be filled)* |
+| **Cross-Layer Optimization** | *(To be filled)* |
+| **Benchmarks and Metrics** | No common benchmark for full-stack energy; EDP rarely reported. *(To be filled.)* |
+
+**Cross-cutting gaps**
+
+- Energy vs privacy; reproducibility of energy evaluation; lifecycle carbon (training + inference + updates). *(To be filled as review progresses.)*
+
+*Last updated: 2025-03-02*
