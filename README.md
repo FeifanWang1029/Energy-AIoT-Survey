@@ -3,7 +3,7 @@
 
 A structured survey repository for **energy-aware** and **energy-efficient** Artificial Intelligence of Things (**AIoT**) systems—focusing on how AIoT consumes energy and how to model, reduce, and manage it across the full stack (device, communication, edge, cloud).
 
-> **Scope note:** This survey addresses the **energy of AIoT** (modeling, measurement, and optimization of energy in AIoT systems). It does *not* cover AI applications for energy infrastructure (e.g., smart grid, demand response).
+> **Scope note:** This survey addresses the **energy of AIoT** (modeling, measurement, and optimization of energy in AIoT systems).
 
 ---
 
