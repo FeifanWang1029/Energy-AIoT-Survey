@@ -18,6 +18,34 @@ AIoT combines **sensing**, **communication**, **edge intelligence**, and **cloud
 
 The repository organizes the literature by a layered view of the AIoT energy stack and a research taxonomy. Each taxonomy section corresponds to a folder for paper collection and will be filled during the literature review.
 
+**Goal:** This repo is designed so that visitors can **identify research gaps**—not only browse paper lists. You will find comparison tables, trend analysis, classification statistics, and a curated **open problems** list to quickly see what is under-studied or missing.
+
+---
+
+## Repository Deliverables: Beyond Paper Lists
+<a name="repository-deliverables-beyond-paper-lists"></a>
+
+| Deliverable | Description | Location |
+|-------------|-------------|----------|
+| 📊 **Paper comparison tables** | Cross-paper tables by **energy metric**, **dataset**, and **layer** (device / comm / edge / cloud / cross-layer) for quick gap spotting | [`tables/`](tables/) — see [below](#paper-comparison-tables) |
+| 📈 **Trend analysis** | Publication trends over time, venue distribution, and emerging topics | [`trends/`](trends/) |
+| 🗂 **Classification statistics** | Counts by taxonomy, layer, metric, and year (e.g. “how many papers report EDP?”) | [`stats/`](stats/) and in README / survey |
+| 📌 **Open problems list** | Curated list of under-addressed questions and research gaps derived from the survey | [`OPEN_PROBLEMS.md`](OPEN_PROBLEMS.md) |
+
+Filling these as the literature review progresses makes it easy for others to **find research gaps** at a glance.
+
+### Survey stats (as of 2025-03-02)
+- **Total papers:** ~24 unique (25 entries across taxonomies)
+- **By layer:** device 8, communication 2, edge 5, cloud 5, cross-layer 4
+- **Details:** [stats/taxonomy_stats.md](stats/taxonomy_stats.md) · [tables/](tables/)
+
+**📊 Paper comparison tables** (in `tables/`) will include at least:
+- **By energy metric:** which papers report mJ/inference, EDP, carbon, throughput/W, etc.—so you can see which metrics are over/under-used.
+- **By dataset:** which papers use which benchmarks (e.g. MLPerf Tiny, custom IoT datasets)—to spot missing benchmarks or under-evaluated settings.
+- **By layer:** device vs communication vs edge vs cloud vs cross-layer—to see where the literature is concentrated and where gaps are.
+
+<a name="paper-comparison-tables"></a>
+
 ---
 
 ## Table of Content
@@ -35,6 +63,8 @@ The repository organizes the literature by a layered view of the AIoT energy sta
   - [3.6 Cross-Layer Energy Optimization](#46-cross-layer-energy-optimization)
   - [3.7 Benchmarks, Datasets, and Metrics](#47-benchmarks-datasets-and-metrics)
   - [3.8 Open Challenges](#48-open-challenges)
+- [Repository Deliverables: Beyond Paper Lists](#repository-deliverables-beyond-paper-lists)
+- [Paper Comparison Tables](#paper-comparison-tables)
 - [Paper Collection Criteria and Repository Workflow](#paper-collection-criteria-and-repository-workflow)
 - [Keywords](#keywords)
 
@@ -242,20 +272,39 @@ The taxonomy below defines the survey structure. Each subsection corresponds to 
 - Clear experimental settings (hardware, workload, dataset).
 - Relevance to system-level AIoT or edge AI (device/edge/network/cloud).
 
-**Per-paper record**
+**Per-paper record** (feeds into comparison tables and stats)
 
 - Citation (BibTeX + link).
-- Layer(s): device / communication / edge / cloud / cross-layer.
+- **Layer(s):** device / communication / edge / cloud / cross-layer.
+- **Energy metric(s)** used and how measured (e.g. mJ/inference, EDP, carbon).
+- **Dataset(s)** and hardware (for reproducibility and comparison).
 - Problem and method (brief bullets).
-- Energy metrics and how they are measured.
 - Key results (numbers and settings).
-- Limitations and open gaps.
+- Limitations and **open gaps** (→ candidates for [OPEN_PROBLEMS.md](OPEN_PROBLEMS.md)).
 
-**Recommended structure per taxonomy folder**
+**Repository structure** (designed for research-gap discovery)
 
-- `paper_list.md` — table of papers.
-- `notes/` — one markdown note per paper.
-- `tables/` — summary tables for the survey.
+```
+├── README.md                 # This file + high-level stats summary
+├── OPEN_PROBLEMS.md           # 📌 Curated open problems / research gaps
+├── tables/                    # 📊 Cross-paper comparison tables
+│   ├── by_energy_metric.md    # Papers grouped by metric (e.g. EDP, mJ/sample)
+│   ├── by_dataset.md         # Papers by dataset / benchmark
+│   └── by_layer.md            # Papers by layer (device / comm / edge / cloud / cross)
+├── trends/                    # 📈 Trend analysis
+│   └── publication_trends.md   # Year, venue, topic trends
+├── stats/                     # 🗂 Classification statistics
+│   └── taxonomy_stats.md      # Counts by taxonomy, layer, metric, year
+└── 1_Energy_Modeling/         # Per-taxonomy folders
+    ├── paper_list.md          # Paper list for this taxonomy
+    ├── notes/                 # Per-paper notes
+    └── tables/                # Section-specific summary tables
+└── 2_Device_Level_Optimization/
+    └── ...
+```
+
+- **Per-taxonomy folder:** `paper_list.md`, `notes/`, `tables/` (section-level summaries).
+- **Root-level:** `tables/` (cross-paper comparison), `trends/`, `stats/`, `OPEN_PROBLEMS.md` — so anyone can quickly **find research gaps** without digging into every folder.
 
 ---
 
