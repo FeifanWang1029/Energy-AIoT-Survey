@@ -23,7 +23,6 @@ AIoT combines **sensing**, **communication**, **edge intelligence**, and **cloud
 ## Table of Content
 
 - [1. Scope](#1-scope)
-  - [Included](#included) · [Excluded](#excluded)
 - [2. AIoT Energy Stack](#2-aiot-energy-stack)
 - [3. Research Taxonomy & Paper Lists](#3-research-taxonomy--paper-lists)
   - [3.1 Energy Modeling](#31-energy-modeling-in-aiot)
@@ -59,13 +58,6 @@ AIoT combines **sensing**, **communication**, **edge intelligence**, and **cloud
 - **Green AI and carbon-aware computing** relevant to AIoT pipelines (scheduling, training, data centers).
 - **Cross-layer energy optimization:** end-to-end and co-design across sensing, communication, edge, and cloud.
 - **Benchmarks, datasets, and metrics:** energy, carbon, EDP, throughput-per-watt, and evaluation protocols.
-
-<a name="excluded"></a>
-### Excluded ❌
-
-- Smart grid engineering, power system operation, and energy market optimization.
-- Renewable generation forecasting, unless directly tied to carbon-aware computing.
-- Pure model compression or algorithm-only work **without** system-level energy evaluation.
 
 ---
 
