@@ -256,11 +256,11 @@ See **§9 📌 Open Problems and Research Gaps** below for the curated list of u
 
 | Layer | Papers (representative) |
 |-------|-------------------------|
-| **Device** | PolyThrottle, tinyMAN, MinUn, TinyOps, Ultralow-Power Smart IoT, Deploying TinyML, MLPerf Power, MLPerf Tiny |
-| **Communication** | Energy-Aware FL 5G IoT, Energy-Efficient Collaborative Task Offloading |
-| **Edge** | EdgeSight, Infer-EDGE, Energy-Aware Inference Offloading, BEFL, Energy-Efficient Edge Inference ISCC |
-| **Cloud** | CarbonGearRL, EcoServe, GREEN, PCAPS, CarbonFlex |
-| **Cross-layer** | Energy-Efficient Edge Inference ISCC, MobiSplit, Dynamic Task Offloading End–Edge–Cloud, EEDTO |
+| **Device** | [PolyThrottle](https://arxiv.org/abs/2310.19991), [tinyMAN](https://cms.tinyml.org/wp-content/uploads/talks2022/2202.09297.pdf), [MinUn](https://arxiv.org/abs/2210.16556), [TinyOps](https://openaccess.thecvf.com/content/CVPR2022W/ECV/papers/Sadiq_TinyOps_ImageNet_Scale_Deep_Learning_on_Microcontrollers_CVPRW_2022_paper.pdf), [Ultralow-Power Smart IoT](https://ieeexplore.ieee.org/document/9758676), [Deploying TinyML](https://www.nature.com/articles/s41598-025-27818-9), [MLPerf Power](https://arxiv.org/abs/2410.12032), [MLPerf Tiny](https://mlcommons.org/working-groups/benchmarks/tiny/) |
+| **Communication** | [Energy-Aware FL 5G IoT](https://jesit.springeropen.com/articles/10.1186/s43067-025-00203-2), [Energy-Efficient Collaborative Task Offloading](https://pmc.ncbi.nlm.nih.gov/articles/PMC6427149/) |
+| **Edge** | [EdgeSight](https://arxiv.org/abs/2405.19213), [Infer-EDGE](https://arxiv.org/html/2501.18842), [Energy-Aware Inference Offloading](https://www.cs.cityu.edu.hk/~weliang/papers/XZLRZXXW20.pdf), [BEFL](https://ui.adsabs.harvard.edu/abs/2024arXiv241203950J/abstract), [Energy-Efficient Edge Inference ISCC](https://arxiv.org/html/2503.00298) |
+| **Cloud** | [CarbonGearRL](https://openreview.net/forum?id=WRSveTJRtG), [EcoServe](https://arxiv.org/abs/2502.05043), [GREEN](https://www.usenix.org/conference/nsdi25/presentation/xu-kaiqiang), [PCAPS](https://dspace.mit.edu/handle/1721.1/162640), [CarbonFlex](https://arxiv.org/html/2505.18357) |
+| **Cross-layer** | [Energy-Efficient Edge Inference ISCC](https://arxiv.org/html/2503.00298), [MobiSplit](https://www.computer.org/csdl/journal/tm/2026/03/11202426/2aMEEULKPMk), [Dynamic Task Offloading End–Edge–Cloud](https://arxiv.org/pdf/2006.10978), [EEDTO](https://cam.tju.edu.cn/homepage/wuhuaming/PDF/EEDTO.pdf) |
 
 *Gap note: Communication-only and device-only layers have fewer papers.*
 
