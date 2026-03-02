@@ -300,27 +300,21 @@ pie showData
 #### By year (trend)
 
 ```mermaid
-pie showData
-    title Papers by year
-    "2019" : 1
-    "2020" : 2
-    "2022" : 6
-    "2023" : 1
-    "2024" : 3
-    "2025" : 10
-    "2026" : 1
+xychart
+    title "Papers by year"
+    x-axis [2019, 2020, 2022, 2023, 2024, 2025, 2026]
+    y-axis "Count" 0 --> 12
+    line [1, 2, 6, 1, 3, 10, 1]
 ```
 
 #### By energy metric
 
 ```mermaid
-pie showData
-    title Papers by energy metric
-    "Energy (generic)" : 10
-    "Carbon / CO₂" : 5
-    "Power" : 2
-    "Latency (joint)" : 3
-    "Throughput / benchmark" : 2
+xychart
+    title "Papers by energy metric"
+    x-axis ["Energy", "Carbon", "Power", "Latency", "Throughput"]
+    y-axis "Count" 0 --> 12
+    bar [10, 5, 2, 3, 2]
 ```
 
 ---
