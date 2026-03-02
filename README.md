@@ -300,65 +300,28 @@ pie showData
 #### By year (trend)
 
 ```mermaid
-xychart-beta
-    title "Papers by year"
-    x-axis [2019, 2020, 2022, 2023, 2024, 2025, 2026]
-    y-axis "Count" 0 --> 12
-    line [1, 2, 6, 1, 3, 10, 1]
+pie showData
+    title Papers by year
+    "2019" : 1
+    "2020" : 2
+    "2022" : 6
+    "2023" : 1
+    "2024" : 3
+    "2025" : 10
+    "2026" : 1
 ```
 
 #### By energy metric
 
 ```mermaid
-barChart
-    title "Papers by energy metric"
-    x-axis ["Energy", "Carbon", "Power", "Latency", "Throughput"]
-    y-axis "Count" 0 --> 12
-    bar [10, 5, 2, 3, 2]
+pie showData
+    title Papers by energy metric
+    "Energy (generic)" : 10
+    "Carbon / CO₂" : 5
+    "Power" : 2
+    "Latency (joint)" : 3
+    "Throughput / benchmark" : 2
 ```
-
----
-
-**Data tables (for reference)**
-
-| By taxonomy | Count |
-|-------------|-------|
-| 3.1 Energy Modeling | 1 |
-| 3.2 Device-Level | 6 |
-| 3.3 Edge AI | 5 |
-| 3.4 Communication | 2 |
-| 3.5 Cloud/Green AI | 5 |
-| 3.6 Cross-Layer | 4 |
-| 3.7 Benchmarks | 2 |
-| **Total (entries)** | **25** |
-
-*(Unique papers ≈ 24.)*
-
-| By layer | Count |
-|----------|-------|
-| device | 8 |
-| communication | 2 |
-| edge | 5 |
-| cloud | 5 |
-| cross-layer | 4 |
-
-| By energy metric | Count |
-|------------------|-------|
-| Energy (generic) | 10 |
-| Carbon / CO₂ | 5 |
-| Power | 2 |
-| Latency (joint) | 3 |
-| Throughput / benchmark | 2 |
-
-| By year | Count |
-|---------|-------|
-| 2025 | 10 |
-| 2024 | 3 |
-| 2023 | 1 |
-| 2022 | 6 |
-| 2020 | 2 |
-| 2019 | 1 |
-| 2026 | 1 (early access) |
 
 ---
 
